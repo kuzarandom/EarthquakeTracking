@@ -1,0 +1,88 @@
+{
+    "fullScreen": {
+      "zIndex": -1
+    },
+    "interactivity": {
+      "events": {
+        "onClick": {
+          "enable": true,
+          "mode": "repulse"
+        }
+      },
+      "modes": {
+        "bubble": {
+          "distance": 400,
+          "duration": 0.3,
+          "opacity": 1,
+          "size": 40
+        },
+        "grab": {
+          "distance": 400,
+          "links": {
+            "opacity": 0.5
+          }
+        }
+      }
+    },
+    "particles": {
+        "shape": {
+            "type": "images",
+            "options": {
+              "images": {
+                "src": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/55f41c31-2d07-4491-a106-d1a51a4aef94/d5vjqzc-4453f23c-a8b9-4d33-a711-8c3db1259530.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU1ZjQxYzMxLTJkMDctNDQ5MS1hMTA2LWQxYTUxYTRhZWY5NFwvZDV2anF6Yy00NDUzZjIzYy1hOGI5LTRkMzMtYTcxMS04YzNkYjEyNTk1MzAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.-exeYVG6Bh63CJr2-ouYZW8FIKzumcTMD6onLiX0tE8",
+                "width": 2000,
+                "height": 2000
+              }
+            }
+          },
+      "move": {
+        "attract": {
+          "rotate": {
+            "x": 600,
+            "y": 1200
+          }
+        },
+        "direction": "top",
+        "enable": true,
+        "outModes": {
+          "bottom": "out",
+          "left": "out",
+          "right": "out",
+          "top": "out"
+        },
+        "speed":10
+      },
+      "number": {
+        "density": {
+          "enable": true
+        },
+        "value": 20
+      },
+      "opacity": {
+        "random": {
+          "enable": true
+        },
+        "value": {
+          "min": 0.1,
+          "max": 0.5
+        },
+        "animation": {
+          "speed": 100,
+          "minimumValue": 50
+        }
+      },
+      "size": {
+        "random": {
+          "enable": true
+        },
+        "value": {
+          "min": 70,
+          "max": 100
+        },
+        "animation": {
+          "speed": 400,
+          "minimumValue": 50
+        }
+      }
+    }
+  }

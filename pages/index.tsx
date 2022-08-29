@@ -62,21 +62,6 @@ const Home: NextPage = () => {
     userid: 'user2'
   }
 
-  async function connectdb() {
-
-    let Firebase = await loadFirebase()
-    const db = getFirestore(Firebase);
-
-    // const UserCall = collection(db, 'users');
-    // const Usersnapshot = await getDocs(UserCall);
-    // const Userlist = Usersnapshot.docs.map(doc => doc.data());
-    // let db = Firebase.firestore()
-    let result = await collection('users').doc('LA').set(data);
-    // return result
-    console.log(result);
-
-
-  }
 
   const styles = {
     paperContainer: {
@@ -88,15 +73,6 @@ const Home: NextPage = () => {
 
     <div>
       <AppbarPub />
-      <Toppage />
-      <News />
-      <Pagetable />
-      <Box
-        sx={{
-          bgcolor: 'black',
-          height: '15vh'
-        }}
-      ></Box>
     </div >
 
     

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import mapboxgl from 'mapbox-gl'
 import maplibregl, { Marker } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { Button, TextareaAutosize, TextField, Slider, ButtonGroup, Typography, Stack, Paper } from '@mui/material';

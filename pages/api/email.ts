@@ -1,35 +1,36 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { Message, SMTPClient } from 'emailjs'
 
-import { SMTPClient } from 'emailjs';
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    const email = typeof req.body?.email === 'string' ? req.body.email : ''
+    const from = process.env.mail
+    const password = process.env.password
 
-
-export default function handler(req, res) {
-
-    const { email } = req.body;
-    // console.log(process.env)
+    if (!email || !from || !password) {
+        res.status(400).json({ message: 'Error' })
+        return
+    }
 
     const client = new SMTPClient({
-        user: process.env.mail,
-        password: process.env.password,
+        user: from,
+        password,
         host: 'smtp.gmail.com',
-        ssl: true
-    });
+        ssl: true,
+    })
 
     try {
-
-
-        const message = client.sendAsync({
-            text: `Just for testing purpose`,
-            from: process.env.mail,
-            to: email,
-            subject: 'testing emailjs'
-            ,
-        });
-    }
-    catch (e) {
-        res.status(400).end(JSON.stringify({ message: "Error" }))
-        return;
+        await client.sendAsync(
+            new Message({
+                text: 'Just for testing purpose',
+                from,
+                to: email,
+                subject: 'testing emailjs',
+            })
+        )
+    } catch {
+        res.status(400).json({ message: 'Error' })
+        return
     }
 
-    res.status(200).end(JSON.stringify({ message: 'Send Mail' }))
+    res.status(200).json({ message: 'Send Mail' })
 }
